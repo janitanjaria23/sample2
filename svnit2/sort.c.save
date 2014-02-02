@@ -1,0 +1,35 @@
+#include<stdio.h>
+
+void sort(int a[3][3])
+{
+	int temp,i,j;
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+		if(a[j+1]<a[j])
+		{
+		temp=a[i][j];
+		a[i][j]=a[i][j+1];
+		a[i][j+1]=temp;
+		}
+		printf("%d",a[i][j]);
+	}printf("\n");
+}
+}
+
+main()
+{
+	int x[3][3];
+	int i,j;
+	printf("enter elements: ");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			scanf("%d",&x[i][j]);
+		}
+	}
+	sort(x);
+}

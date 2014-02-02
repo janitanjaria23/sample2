@@ -1,0 +1,43 @@
+#include<iostream>
+#include<stdlib.h>
+#include<stdio.h>
+using namespace std;
+void diamond(int n,int a[])
+{
+	int ctr=0,s1=0;
+	ctr=(n);
+
+		for(int i=1;i<=ctr;i++)
+		{
+			if(ctr==1)
+			{
+				s1+=a[i];
+			}
+			else
+			{
+					if(i%2!=0)
+				{
+					s1+=a[i];
+				}
+
+				ctr--;
+				diamond(ctr,a);
+			}
+
+		}
+}
+
+int main()
+{
+	int n,t=0;
+	int *a;
+	cout<<"Enter n:"<<endl;
+	cin>>n;
+	a=new int[n];
+	for(int i=1;i<=n;i++)
+	{
+	cout<<"Enter the value:"<<endl;
+	cin>>a[i];
+	}
+
+	t=diamond(n,a);

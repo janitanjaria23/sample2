@@ -1,0 +1,84 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+int x;
+int y;
+int z;
+int c;
+struct node *link;
+};
+struct node *x,*p1,*p2,*temp,*curr,*curr1;
+main()
+{
+int n=0,flag=0;
+
+printf("Enter 1st polynomial");
+while(1)
+{
+temp=(struct node *)malloc(sizeof(struct node));
+//p1=NULL;
+n++;
+printf("\nTerm%d\nEnter coeff of x,y,z and coefficient respectively:",n);
+scanf("%d%d%d%d",&temp->x,&temp->y,&temp->z,&temp->c);
+if(temp->x==0 && temp->y==0 && temp->z==0)
+break;
+if(p1==NULL)
+{
+p1=temp;
+temp->link==NULL;
+curr=p1;
+}
+else
+{
+curr=curr->link;
+curr=temp;
+curr->link=NULL;
+}
+printf("%d %d %d",curr->x,curr->y,curr->z);
+}
+//x=curr;
+printf("Enter 2nd polynomial");
+n=0;
+while(1)
+{
+temp=(struct node *)malloc(sizeof(struct node));
+n++;
+printf("\nTerm%d\nEnter coeff of x,y,z and coefficient respectively:",n);
+scanf("%d%d%d%d",&temp->x,&temp->y,&temp->z,&temp->c);
+if(temp->x==0 && temp->y==0 && temp->z==0)
+{break;
+}
+else
+{
+curr=x;
+x=temp;
+temp->link=NULL;
+}
+}
+printf("hi");
+printf("\n");
+curr=NULL;
+
+printf("%d %d %d",p1->x,p1->y,p1->z);
+curr=p1;
+while(curr->link!=NULL)
+{printf("hi");
+flag=0;
+curr1=curr->link;
+while(curr1->link!=NULL)
+{
+if(curr->x==curr1->x && curr->y==curr1->y && curr->z==curr1->z)
+{
+printf("%dx^%dy^%dz^%d+",curr->c+curr1->c,curr->x,curr->y,curr->z);
+flag=1;
+}
+curr1=curr1->link;
+}
+if(flag==0)
+{
+printf("%dx^%dy^%dz^%d+",curr->c,curr->x,curr->y,curr->z);
+}
+curr=curr->link;
+}
+}

@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<conio.h>
+main()
+{
+	int i=0;
+	char s[30],w1,w2;
+	
+	printf("enter the string:\n ");
+	scanf("%s",s);
+	printf("enter word to be found: \n");
+	scanf("%s",w1);	 printf("enter word to be inserted: \n"); 
+        scanf("%s",w2);
+
